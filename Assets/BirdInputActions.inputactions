@@ -1,0 +1,77 @@
+{
+    "version": 1,
+    "name": "BirdInputActions",
+    "maps": [
+        {
+            "name": "Bird",
+            "id": "e19c094f-6f33-4dfb-9f5c-6c30f585dddb",
+            "actions": [
+                {
+                    "name": "Flap",
+                    "type": "Button",
+                    "id": "bc570d76-a933-4bcf-99b2-6bb9dfb401e7",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "b3ddf526-b63d-4a53-aa8c-dac8bbbce505",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b24a30e7-43cf-4f88-94e5-53c26753b35c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Flap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "7c1c9fce-a836-4eb2-993f-f1ccc478d1d0",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "2134b650-033c-4b2e-9728-d1af16f36a61",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "ad39e943-196b-466a-8cdd-1ef67737348f",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
