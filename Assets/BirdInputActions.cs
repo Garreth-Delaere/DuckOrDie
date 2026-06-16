@@ -109,6 +109,15 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Duck"",
+                    ""type"": ""Button"",
+                    ""id"": ""bd35b5e7-d8a1-4b2f-b571-9ad644e4aa7e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -155,6 +164,17 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e0db449-e4fa-4b45-a529-40ba23062070"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Duck"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -165,6 +185,7 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
         m_Bird = asset.FindActionMap("Bird", throwIfNotFound: true);
         m_Bird_Flap = m_Bird.FindAction("Flap", throwIfNotFound: true);
         m_Bird_Move = m_Bird.FindAction("Move", throwIfNotFound: true);
+        m_Bird_Duck = m_Bird.FindAction("Duck", throwIfNotFound: true);
     }
 
     ~@BirdInputActions()
@@ -247,6 +268,7 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
     private List<IBirdActions> m_BirdActionsCallbackInterfaces = new List<IBirdActions>();
     private readonly InputAction m_Bird_Flap;
     private readonly InputAction m_Bird_Move;
+    private readonly InputAction m_Bird_Duck;
     /// <summary>
     /// Provides access to input actions defined in input action map "Bird".
     /// </summary>
@@ -266,6 +288,10 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Bird/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Bird_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "Bird/Duck".
+        /// </summary>
+        public InputAction @Duck => m_Wrapper.m_Bird_Duck;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -298,6 +324,9 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @Duck.started += instance.OnDuck;
+            @Duck.performed += instance.OnDuck;
+            @Duck.canceled += instance.OnDuck;
         }
 
         /// <summary>
@@ -315,6 +344,9 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @Duck.started -= instance.OnDuck;
+            @Duck.performed -= instance.OnDuck;
+            @Duck.canceled -= instance.OnDuck;
         }
 
         /// <summary>
@@ -369,5 +401,12 @@ public partial class @BirdInputActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Duck" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDuck(InputAction.CallbackContext context);
     }
 }
