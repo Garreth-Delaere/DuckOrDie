@@ -625,6 +625,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1057244537, guid: a359e66150941ab4fb915f56441f75c0, type: 3}
+    - target: {fileID: 3003674139296586691, guid: 0510a53a2c7de9346b9e14305dc6c5d4, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4403461227881037213, guid: 0510a53a2c7de9346b9e14305dc6c5d4, type: 3}
       propertyPath: m_Name
       value: RestartButton
@@ -903,17 +907,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4058509219766192780, guid: 0731559e685d9eb4b82b4d7af9942653, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8834798503632694576, guid: 0731559e685d9eb4b82b4d7af9942653, type: 3}
       propertyPath: m_Name
       value: ScoreDisplay
       objectReference: {fileID: 0}
     - target: {fileID: 8931876012880035698, guid: 0731559e685d9eb4b82b4d7af9942653, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -76
+      value: -62
       objectReference: {fileID: 0}
     - target: {fileID: 8931876012880035698, guid: 0731559e685d9eb4b82b4d7af9942653, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 45
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
